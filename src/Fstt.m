@@ -4,10 +4,10 @@ function st = Fstt                                                              
 st.dr.dnm  = 1;    % (14) 1 - 12 - 17 - 18  % setting   % 1, 12, 17, [18-curve], [20-downtown]        % sub-directory number (dname - 1)
 st.dr.cam  = 2;                                                                                     % left/right camera
                                                              % training/testing dataset
-st.dr.mdr  = 'D:\2011_09_26\2011_09_26_drive_0005_sync';                                % main directoy of dataset
-% st.dr.mdr  = 'F:\dataset_ext\dataset_tracking';
-st.dr.pts  = fullfile(st.dr.mdr, sprintf('velodyne_points\\data'));   % directory of velodyne points
-st.dr.img  = fullfile(st.dr.mdr, sprintf('image_%02d\\data\\', st.dr.cam));  % directory of color images
+st.dr.mdr  = 'D:/2011_09_26/2011_09_26_drive_0005_sync';                                % main directoy of dataset
+% st.dr.mdr  = 'F:/dataset_ext/dataset_tracking';
+st.dr.pts  = fullfile(st.dr.mdr, sprintf('velodyne_points//data'));   % directory of velodyne points
+st.dr.img  = fullfile(st.dr.mdr, sprintf('image_%02d//data//', st.dr.cam));  % directory of color images
 st.dr.lbl  = fullfile(st.dr.mdr, sprintf('label_%02d', st.dr.cam));                      % directory of tracklet labels
 st.dr.oxt  = fullfile(st.dr.mdr, 'oxts');                                                % directory of pose
 st.dr.clb  = fullfile(st.dr.mdr, 'calib');                                               % directory of calibration
@@ -15,8 +15,8 @@ st.dr.rec  = fullfile(st.dr.mdr, 'result', filesep);                            
 st.dr.nsq  = numel(dir(fullfile(st.dr.mdr, sprintf('image_%02d', st.dr.cam)))) - 2;      % total number of tracking sequences
 %% start and end frames
 st.st.st   = 1;                                                                                     % start frames
-%st.st.tn   = size(dir(sprintf('%s\\*.png',st.dr.img)), 1);                                           % number of frames
-st.st.tn   = size(dir(sprintf('%s\\*.png',st.dr.img)), 1);                                           % number of frames
+%st.st.tn   = size(dir(sprintf('%s//*.png',st.dr.img)), 1);                                           % number of frames
+st.st.tn   = size(dir(sprintf('%s//*.png',st.dr.img)), 1);                                           % number of frames
 %% local grid
 st.bias    = 1.73;  %changed from 1.73
 st.vm.xf   = +25;      % x direction and front (x: +5 ~ +55)
@@ -46,7 +46,7 @@ st.fr.sz   = 0.5;                                                               
 st.fr.bsz  = ceil(st.fr.sz / min([st.vx.x, st.vx.y, st.vx.z]));                                     % radiuos of volume to search (size of cells)
 st.fr.frg  = 1;
 %% calibration
-clb        = dlmread(sprintf('%s\\%04d.txt', st.dr.clb, st.dr.dnm - 1), ' ', 0, 1);       % [read data, delimiter, row offset, column offset]
+clb        = dlmread(sprintf('%s//%04d.txt', st.dr.clb, st.dr.dnm - 1), ' ', 0, 1);       % [read data, delimiter, row offset, column offset]
 t.p2       = reshape(clb(st.dr.cam + 1, 1 : 12), [4, 3])'; t.p2(4, :) = [0 0 0 1];                  % load 3x4 P2 camera calibration matrix
 t.rct      = reshape(clb(5, 1 : 9), [3, 3])'; t.rct(:, 4) = 0; t.rct(4,:) = [0 0 0 1];              % load 3x3 image calibration matrix
 t.v2c      = reshape(clb(6, 1 : 12), [4, 3])'; t.v2c(4,:) = [0 0 0 1];                              % load 3x4 velodyne to camera matrix (R|t)
@@ -65,7 +65,7 @@ P_velo_to_img = my_calib.P_rect{cam+1}*R_cam_to_rect*Tr_velo_to_cam;
 st.dt.clb = P_velo_to_img
 %
 %% pose
-%trm        = load(sprintf('%s\%04d', fullfile(st.dr.mdr, st.dr.dst, 'pose'), st.dr.dnm - 1));       % read from directory of poses           
+%trm        = load(sprintf('%s/%04d', fullfile(st.dr.mdr, st.dr.dst, 'pose'), st.dr.dnm - 1));       % read from directory of poses           
 %st.dt.pose = trm.pose;                                                                              % transformation matrix in camera coordinate
 tmp_pose = loadOxtsliteData(st.dr.oxt);
 st.dt.pose = convertOxtsToPose(tmp_pose);
