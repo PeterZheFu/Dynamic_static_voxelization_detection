@@ -46,7 +46,7 @@ st.fr.sz   = 0.5;                                                               
 st.fr.bsz  = ceil(st.fr.sz / min([st.vx.x, st.vx.y, st.vx.z]));                                     % radiuos of volume to search (size of cells)
 st.fr.frg  = 1;
 %% calibration
-clb        = dlmread(sprintf('%s//%04d.txt', st.dr.clb, st.dr.dnm - 1), ' ', 0, 1);       % [read data, delimiter, row offset, column offset]
+clb        = dlmread(sprintf('%s/%04d.txt', st.dr.clb, st.dr.dnm - 1), ' ', 0, 1);       % [read data, delimiter, row offset, column offset]
 t.p2       = reshape(clb(st.dr.cam + 1, 1 : 12), [4, 3])'; t.p2(4, :) = [0 0 0 1];                  % load 3x4 P2 camera calibration matrix
 t.rct      = reshape(clb(5, 1 : 9), [3, 3])'; t.rct(:, 4) = 0; t.rct(4,:) = [0 0 0 1];              % load 3x3 image calibration matrix
 t.v2c      = reshape(clb(6, 1 : 12), [4, 3])'; t.v2c(4,:) = [0 0 0 1];                              % load 3x4 velodyne to camera matrix (R|t)
