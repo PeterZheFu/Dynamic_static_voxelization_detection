@@ -4,7 +4,7 @@ function st = Fstt                                                              
 st.dr.dnm  = 1;    % (14) 1 - 12 - 17 - 18  % setting   % 1, 12, 17, [18-curve], [20-downtown]        % sub-directory number (dname - 1)
 st.dr.cam  = 2;                                                                                     % left/right camera
                                                              % training/testing dataset
-st.dr.mdr  = 'D:/2011_09_26/2011_09_26_drive_0005_sync';                                % main directoy of dataset
+st.dr.mdr  = '~/continental/kitti/2011_09_26/2011_09_26_drive_0005_sync';                                % main directoy of dataset
 % st.dr.mdr  = 'F:/dataset_ext/dataset_tracking';
 st.dr.pts  = fullfile(st.dr.mdr, sprintf('velodyne_points//data'));   % directory of velodyne points
 st.dr.img  = fullfile(st.dr.mdr, sprintf('image_%02d//data//', st.dr.cam));  % directory of color images
@@ -46,12 +46,12 @@ st.fr.sz   = 0.5;                                                               
 st.fr.bsz  = ceil(st.fr.sz / min([st.vx.x, st.vx.y, st.vx.z]));                                     % radiuos of volume to search (size of cells)
 st.fr.frg  = 1;
 %% calibration
-clb        = dlmread(sprintf('%s/%04d.txt', st.dr.clb, st.dr.dnm - 1), ' ', 0, 1);       % [read data, delimiter, row offset, column offset]
-t.p2       = reshape(clb(st.dr.cam + 1, 1 : 12), [4, 3])'; t.p2(4, :) = [0 0 0 1];                  % load 3x4 P2 camera calibration matrix
-t.rct      = reshape(clb(5, 1 : 9), [3, 3])'; t.rct(:, 4) = 0; t.rct(4,:) = [0 0 0 1];              % load 3x3 image calibration matrix
-t.v2c      = reshape(clb(6, 1 : 12), [4, 3])'; t.v2c(4,:) = [0 0 0 1];                              % load 3x4 velodyne to camera matrix (R|t)
-t.clb      = t.p2 * t.rct * t.v2c; 
-st.dt.clb = t.clb(1:4, 1:3)'                                    % project velodyne points to image plane
+% clb        = dlmread(sprintf('%s/%04d.txt', st.dr.clb, st.dr.dnm - 1), ' ', 0, 1);       % [read data, delimiter, row offset, column offset]
+% t.p2       = reshape(clb(st.dr.cam + 1, 1 : 12), [4, 3])'; t.p2(4, :) = [0 0 0 1];                  % load 3x4 P2 camera calibration matrix
+% t.rct      = reshape(clb(5, 1 : 9), [3, 3])'; t.rct(:, 4) = 0; t.rct(4,:) = [0 0 0 1];              % load 3x3 image calibration matrix
+% t.v2c      = reshape(clb(6, 1 : 12), [4, 3])'; t.v2c(4,:) = [0 0 0 1];                              % load 3x4 velodyne to camera matrix (R|t)
+% t.clb      = t.p2 * t.rct * t.v2c; 
+% st.dt.clb = t.clb(1:4, 1:3)'                                    % project velodyne points to image plane
 %
 % load calibration
 cam = 2
