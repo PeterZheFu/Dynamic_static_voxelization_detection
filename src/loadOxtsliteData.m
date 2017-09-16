@@ -9,7 +9,7 @@ if nargin==1
   oxts  = [];
   for i=1:length(ts)
     if ~isempty(ts{i})
-      oxts{i} = dlmread([base_dir '\data\' num2str(i-1,'%010d') '.txt']);
+      oxts{i} = dlmread([base_dir '/data/' num2str(i-1,'%010d') '.txt']);
     else
       oxts{i} = [];
     end
