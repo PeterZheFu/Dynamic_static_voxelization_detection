@@ -3,16 +3,16 @@ function st = Fstt                                                              
 %% main directories [1: moving, 18: car stoped] 
 st.dr.dnm  = 1;    % (14) 1 - 12 - 17 - 18  % setting   % 1, 12, 17, [18-curve], [20-downtown]        % sub-directory number (dname - 1)
 st.dr.cam  = 2;                                                                                     % left/right camera
-st.dr.dst  = 'training_0005'; %  'testing'                                                              % training/testing dataset
-st.dr.mdr  = 'D:\New_two_stage\data';                                % main directoy of dataset
+                                                             % training/testing dataset
+st.dr.mdr  = 'D:\2011_09_26\2011_09_26_drive_0005_sync';                                % main directoy of dataset
 % st.dr.mdr  = 'F:\dataset_ext\dataset_tracking';
-st.dr.pts  = fullfile(st.dr.mdr, st.dr.dst, sprintf('velodyne_points\\data'));   % directory of velodyne points
-st.dr.img  = fullfile(st.dr.mdr, st.dr.dst, sprintf('image_%02d\\data\\', st.dr.cam));  % directory of color images
-st.dr.lbl  = fullfile(st.dr.mdr, st.dr.dst, sprintf('label_%02d', st.dr.cam));                      % directory of tracklet labels
-st.dr.oxt  = fullfile(st.dr.mdr, st.dr.dst, 'oxts');                                                % directory of pose
-st.dr.clb  = fullfile(st.dr.mdr, st.dr.dst, 'calib');                                               % directory of calibration
+st.dr.pts  = fullfile(st.dr.mdr, sprintf('velodyne_points\\data'));   % directory of velodyne points
+st.dr.img  = fullfile(st.dr.mdr, sprintf('image_%02d\\data\\', st.dr.cam));  % directory of color images
+st.dr.lbl  = fullfile(st.dr.mdr, sprintf('label_%02d', st.dr.cam));                      % directory of tracklet labels
+st.dr.oxt  = fullfile(st.dr.mdr, 'oxts');                                                % directory of pose
+st.dr.clb  = fullfile(st.dr.mdr, 'calib');                                               % directory of calibration
 st.dr.rec  = fullfile(st.dr.mdr, 'result', filesep);                                                % directory of record
-st.dr.nsq  = numel(dir(fullfile(st.dr.mdr, st.dr.dst, sprintf('image_%02d', st.dr.cam)))) - 2;      % total number of tracking sequences
+st.dr.nsq  = numel(dir(fullfile(st.dr.mdr, sprintf('image_%02d', st.dr.cam)))) - 2;      % total number of tracking sequences
 %% start and end frames
 st.st.st   = 1;                                                                                     % start frames
 %st.st.tn   = size(dir(sprintf('%s\\*.png',st.dr.img)), 1);                                           % number of frames

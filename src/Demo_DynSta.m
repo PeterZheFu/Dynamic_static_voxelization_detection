@@ -10,11 +10,11 @@ close all
 %% setting 
 st           = Fstt;
 %% main
-  st.st.st = 58;
-  st.st.tn = 58;
+  st.st.st = 1;
+  st.st.tn = 2;
 for frame    =  st.st.st : st.st.tn;             % frame number 1: 25
-close all
-frame
+
+disp(['Processing frame ', num2str(frame), ' out of ',  num2str(st.st.tn)]);
 
 %run_demoVelodyne (base_dir, calib_dir)
 
@@ -32,12 +32,16 @@ h = figure('units','normalized','outerposition',[0 0 1 1], 'Visible', 'off');
 %Fplot(st, Bg, Fg, prm, frame)  
 % figure('units','normalized','outerposition',[0 0 1 1])
 Fplot_fst(st, Bg, Fg, prm, frame)
-% fpath = "C:\Users\uidn0952\Documents\GitHub\Final_dyn_sta\images";
-% fname = strcat('voxels_frame_',  num2str(frame), '.png');
+%%
+
+fpath = 'C:\Users\FU000\Documents\GitHub\Dynamic_static_voxelization_detection\four_images_per_frame_images';
+fname = strcat('voxels_frame_',  num2str(frame), '.jpg');
+saveas(h, fullfile(fpath, fname))
+
+%%
 %saveas(gcf, strcat('voxels_and_image_frame_', sprintf('%03d', frame), '.png'));
 % print -djpeg strcat('voxels_and_image_frame_', sprintf('%03d', frame), '.png');
-saveas(h, strcat('voxels_and_image_frame_', sprintf('%03d', frame), '.png'));
-pause(0.5)
+% saveas(h, strcat('voxels_and_image_frame_', sprintf('%03d', frame), '.png'));  %fullfile(fname, filename), 'jpeg'
 % close all;
 end
 

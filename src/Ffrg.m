@@ -35,7 +35,7 @@ fid.pts       = fopen(sprintf('%s\\%010d.bin', st.dr.pts, frame - 1), 'rb');   %
 velodyne      = fread(fid.pts, [4 inf], 'single')';                          % velodyne points [x, y, z, r] (total number of pointsx4)
 fclose(fid.pts);                                                               % close fid
 pts.pts       = velodyne(:, 1:3);                                            % velodyne points [x, y, z] (total number of pointsx3)
-pts.pts(:,3) = pts.pts(:,3) + st.bias
+pts.pts(:,3) = pts.pts(:,3) + st.bias;
 pts.ptn       = pts.pts * pts.rtn' + repmat(pts.trn', size(pts.pts, 1), 1);  % transformed velodyne points (Xp = RX + T)
 
 end
