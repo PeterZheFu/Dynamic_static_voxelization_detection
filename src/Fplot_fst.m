@@ -100,7 +100,7 @@ function Fpli(st, In, frame, clr)
 
 %% project voxels on image
 In.mat.occ     = In.mat.occ / max(In.mat.occ(:));
-img            = imread(sprintf('%s\\%010d.png', st.dr.img, frame - 1));   % load image (number of frames in each seq.)
+img            = imread(sprintf('%s/%010d.png', st.dr.img, frame - 1));   % load image (number of frames in each seq.)
 hold on
 gds(In, st, img, clr)      % bars (1 to show density): rsl.his, rsl.hei, rsl.max
 hold off 
