@@ -34,9 +34,12 @@ h = figure('units','normalized','outerposition',[0 0 1 1], 'Visible', 'off');
 Fplot_fst(st, Bg, Fg, prm, frame)
 %%
 
-fpath = 'C:\Users\FU000\Documents\GitHub\Dynamic_static_voxelization_detection\four_images_per_frame_images';
-fname = strcat('voxels_frame_',  num2str(frame), '.jpg');
-saveas(h, fullfile(fpath, fname))
+% fpath = 'C:\Users\FU000\Documents\GitHub\Dynamic_static_voxelization_detection';
+
+fpath = '~/continental/kitti/2011_09_26/2011_09_26_drive_0005_sync';
+[status, msg, msgID] = mkdir(fullfile(fpath, 'sequence_0005_four_images_per_frame_images'));
+fname = strcat('labeled_voxels_frame_', sprintf('%03d', num2str(frame)), '.jpg');
+saveas(h, fullfile(fpath, 'sequence_0005_four_images_per_frame_images', fname))
 
 %%
 %saveas(gcf, strcat('voxels_and_image_frame_', sprintf('%03d', frame), '.png'));
