@@ -4,7 +4,7 @@ function st = Fstt                                                              
 st.dr.dnm  = 1;    % (14) 1 - 12 - 17 - 18  % setting   % 1, 12, 17, [18-curve], [20-downtown]        % sub-directory number (dname - 1)
 st.dr.cam  = 2;                                                                                     % left/right camera
                                                              % training/testing dataset
-st.dr.mdr  = '~/continental/kitti/2011_09_26/2011_09_26_drive_0005_sync';                                % main directoy of dataset
+st.dr.mdr  = '~/continental/kitti/2011_09_26/2011_09_26_drive_0001_sync';                                % main directoy of dataset
 % st.dr.mdr  = 'F:/dataset_ext/dataset_tracking';
 st.dr.pts  = fullfile(st.dr.mdr, sprintf('velodyne_points//data'));   % directory of velodyne points
 st.dr.img  = fullfile(st.dr.mdr, sprintf('image_%02d//data//', st.dr.cam));  % directory of color images
