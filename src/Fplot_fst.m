@@ -32,6 +32,7 @@ In.mat.occ       = In.mat.occ / max(In.mat.occ(:));
 hold on
 % FIsurf(slp, st);                               % plot surface
 FIgrd(In, st, clr);                              % plot grid
+plotcube([3 1 1],[ 0  -0.5 0],.8,[1 0 0]);
 hold off;
 xlabel('X'); ylabel('Y'); zlabel('Z');           % (-55, 25) view(-25, 45) view(0, 90) view(-105, 10) view(-80, 25)
 view(-76, 18); axis equal tight; grid on;

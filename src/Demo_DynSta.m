@@ -10,8 +10,8 @@ close all
 %% setting 
 st           = Fstt;
 %% main
-%   st.st.st = 1;
-%   st.st.tn = 2;
+  st.st.st = 1;
+  st.st.tn = 1;
 for frame    =  st.st.st : st.st.tn;             % frame number 1: 25
 
 disp(['Processing frame ', num2str(frame), ' out of ',  num2str(st.st.tn)]);
