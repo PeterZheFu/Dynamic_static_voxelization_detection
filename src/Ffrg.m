@@ -31,7 +31,7 @@ transform = transform_all{frame};
 pts.rtn       = transform(1:3, 1:3);                                         % rotation    3x3
 pts.trn       = transform(1:3, 4);                                           % translation 3x1
 %% velodyne points [x, y, z, r] total number of pointsx4
-fid.pts       = fopen(sprintf('%s\\%010d.bin', st.dr.pts, frame - 1), 'rb');   % read from directory of points (number of frames in each seq.)
+fid.pts       = fopen(sprintf('%s/%010d.bin', st.dr.pts, frame - 1), 'rb');   % read from directory of points (number of frames in each seq.)
 velodyne      = fread(fid.pts, [4 inf], 'single')';                          % velodyne points [x, y, z, r] (total number of pointsx4)
 fclose(fid.pts);                                                               % close fid
 pts.pts       = velodyne(:, 1:3);                                            % velodyne points [x, y, z] (total number of pointsx3)
