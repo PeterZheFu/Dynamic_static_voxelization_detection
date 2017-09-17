@@ -1,7 +1,7 @@
 function Fplot(st, Bg, Fg, prm, frame)
 
 %% image
-img           = imread(sprintf('%s\\%010d.png', st.dr.img, frame - 1));
+img           = imread(sprintf('%s/%010d.png', st.dr.img, frame - 1));
 
 subplot(2, 2, 1); 
 imshow(img)
