@@ -10,8 +10,8 @@ close all
 %% setting 
 st           = Fstt;
 %% main
-  st.st.st = 1;
-  st.st.tn = 2;
+%   st.st.st = 1;
+%   st.st.tn = 2;
 for frame    =  st.st.st : st.st.tn;             % frame number 1: 25
 
 disp(['Processing frame ', num2str(frame), ' out of ',  num2str(st.st.tn)]);
@@ -36,7 +36,7 @@ Fplot_fst(st, Bg, Fg, prm, frame)
 
 % fpath = 'C:\Users\FU000\Documents\GitHub\Dynamic_static_voxelization_detection';
 
-fpath = '~/continental/kitti/2011_09_26/2011_09_26_drive_0005_sync';
+fpath = st.dr.mdr; %'~/continental/kitti/2011_09_26/2011_09_26_drive_0005_sync';
 [status, msg, msgID] = mkdir(fullfile(fpath, 'sequence_0005_four_images_per_frame_images'));
 fname = strcat('labeled_voxels_frame_', sprintf('%03d', num2str(frame)), '.jpg');
 saveas(h, fullfile(fpath, 'sequence_0005_four_images_per_frame_images', fname))
