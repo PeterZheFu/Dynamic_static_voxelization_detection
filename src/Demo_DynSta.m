@@ -9,8 +9,8 @@ sequence_no = 9;
 %% setting 
 st           = Fstt(sequence_no);
 %% main
-st.st.st = 1;
-  st.st.tn = 1;
+% st.st.st = 1;
+%   st.st.tn = 1;
 for frame    =  st.st.st : st.st.tn;             % frame number 1: 25
 clear h;
 disp(['Processing frame ', num2str(frame), ' out of ',  num2str(st.st.tn)]);
