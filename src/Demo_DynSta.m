@@ -10,7 +10,7 @@ close all
 
 sequence = 9;
 %% setting 
-st           = Fstt;
+st           = Fstt(9);
 %% main
 % st.st.st = 72;
 %   st.st.tn = 1;

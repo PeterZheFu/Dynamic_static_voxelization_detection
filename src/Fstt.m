@@ -1,11 +1,11 @@
-function st = Fstt                                                              % setting [directory, number of frames, map setting]
+function st = Fstt(seq)                                                              % setting [directory, number of frames, map setting]
 
 %% main directories [1: moving, 18: car stoped] 
 st.dr.dnm  = 1;    % (14) 1 - 12 - 17 - 18  % setting   % 1, 12, 17, [18-curve], [20-downtown]        % sub-directory number (dname - 1)
 st.dr.cam  = 2;                                                                                     % left/right camera
   
-
-st.dr.mdr  = '~/continental/kitti/2011_09_26/2011_09_26_drive_000_sync';     % for digits machine                            % main directoy of dataset
+sequence = seq;
+st.dr.mdr  = strcat('~/continental/kitti/2011_09_26/2011_09_26_drive_000', num2str(sequence), '_sync';     % for digits machine                            % main directoy of dataset
 % st.dr.mdr = 'D:\2011_09_26\2011_09_26_drive_0009_sync';
 st.dr.save = 'D:\result_dyn_sta';
 sr.dr.save = '~/continental/kitti/2011_09_26'
