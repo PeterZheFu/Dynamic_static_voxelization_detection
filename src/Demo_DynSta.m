@@ -37,7 +37,7 @@ Fplot_fst(st, Bg, Fg, prm, frame)
 
 fpath = st.dr.save
 % [status, msg, msgID] = mkdir(fullfile(fpath, 'sequence_0005_four_images_per_frame_images'));
-fname = strcat(num2str(sprintf('%04d', sequence_no)),'_', num2str(sprintf('%03d', frame)), '_voxels with labels four images', '.jpg');
+fname = strcat(num2str(sprintf('%04d', sequence_no)),'_', num2str(sprintf('%03d', frame)), '_voxels with labels four images', '.jpg')
 saveas(h, fullfile(fpath, fname))
 
 
