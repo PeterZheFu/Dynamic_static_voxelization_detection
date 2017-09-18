@@ -5,7 +5,7 @@ st.dr.dnm  = 1;    % (14) 1 - 12 - 17 - 18  % setting   % 1, 12, 17, [18-curve],
 st.dr.cam  = 2;                                                                                     % left/right camera
   
 
-% for digits machine st.dr.mdr  = '~/continental/kitti/2011_09_26/2011_09_26_drive_000_sync';                                % main directoy of dataset
+st.dr.mdr  = '~/continental/kitti/2011_09_26/2011_09_26_drive_000_sync';     % for digits machine                            % main directoy of dataset
 % st.dr.mdr = 'D:\2011_09_26\2011_09_26_drive_0009_sync';
 st.dr.save = 'D:\result_dyn_sta';
 sr.dr.save = '~/continental/kitti/2011_09_26'
