@@ -6,14 +6,15 @@
 %% clear memory & command window
 clc; clear all; close all;
 sequence_no = 9;
-if_digits = 1;
+if_digits = 0;
 %% setting 
 st           = Fstt(sequence_no, if_digits);
 %% main
-% st.st.st = 1;
+st.st.st = 58;
 %   st.st.tn = 1;
+tic
 for frame    =  st.st.st : st.st.tn;             % frame number 1: 25
-clear h;
+
 disp(['Processing frame ', num2str(frame), ' out of ',  num2str(st.st.tn)]);
 
 %run_demoVelodyne (base_dir, calib_dir)
@@ -38,11 +39,11 @@ Fplot_fst(st, Bg, Fg, prm, frame)
 %%
 
 
-fpath = st.dr.save
+fpath = st.dr.save;
 % [status, msg, msgID] = mkdir(fullfile(fpath, 'sequence_0005_four_images_per_frame_images'));
-fname = strcat(num2str(sprintf('%04d', sequence_no)),'_', num2str(sprintf('%03d', frame)), '_voxels with labels four images', '.jpg')
-saveas(h, fullfile(fpath, fname))
-
-
+fname = strcat(num2str(sprintf('%04d', sequence_no)),'_', num2str(sprintf('%03d', frame)), '_voxels with labels four images', '.jpg');
+saveas(h, fullfile(fpath, fname));
+clear h, Bg, Bm, Fg, Fm, In, prm;
+toc
 end
 
