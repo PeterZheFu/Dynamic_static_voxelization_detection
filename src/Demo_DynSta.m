@@ -7,7 +7,7 @@
 clc; clear all; close all;
 sequence_no = 9;
 %% setting 
-st           = Fstt;
+st           = Fstt(sequence_no);
 %% main
 % st.st.st = 1;
 %   st.st.tn = 1;
