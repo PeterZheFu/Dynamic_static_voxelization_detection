@@ -5,12 +5,12 @@
 % Alireza Asvadi, 2015 July
 %% clear memory & command window
 clc; clear all; close all;
-sequence_no = 52;
+sequence_no = 51;
 if_digits = 0;
 %% setting 
 st           = Fstt(sequence_no, if_digits);
 %% main
-st.st.st = 15 ;
+% st.st.st = 6;
 %   st.st.tn = 1;
 
 for frame    =  st.st.st : st.st.tn;             % frame number 1: 25
@@ -34,7 +34,7 @@ h = figure('units','normalized','outerposition',[0 0 1 1], 'Visible', 'off')
 % figure('units','normalized','outerposition',[0 0 1 1])
 
 %% four image plot
-Fplot_fst(st, Bg, Fg, prm, frame);
+Fplot_fst(st, Bg, Fg, prm, frame, sequence_no);
 %Fplt(st, Bg, prm, frame, [1,0,0])
 %%
 

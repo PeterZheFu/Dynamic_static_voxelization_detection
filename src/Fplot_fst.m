@@ -1,4 +1,4 @@
-function Fplot(st, Bg, Fg, prm, frame)
+function Fplot(st, Bg, Fg, prm, frame, sequence_no)
 
 %% image
 img           = imread(sprintf('%s/%010d.png', st.dr.img, frame - 1));
@@ -7,19 +7,21 @@ subplot(2, 2, 1);
 imshow(img)
 Fpli(st, Bg, frame, [1, 0, 0]) 
 Fpli(st, Fg, frame, [0, 1, 0])
+fname = strcat('Sequence_', num2str(sprintf('%04d', sequence_no)),'_frame_', num2str(sprintf('%03d', frame)));
+title(fname)
 %% grid
 subplot(2, 2, 2);
 Fplt(st, Bg, prm, frame, [1,0,0])
-title('Static components')
+title('Static objects')
 subplot(2, 2, 3);
 Fplt(st, Fg, prm, frame, [1,1,0])
-title('Dynamic components')
+title('Dynamic objects')
 %hold on; plot(st.mdl); hold off
 subplot(2, 2, 4);
 Fplt(st, Bg, prm, frame, [1,0,0])
 hold on
 Fplt(st, Fg, prm, frame, [1,1,0])
-title('Both components')
+title('All objects')
 
 %pause(0.005)
 
