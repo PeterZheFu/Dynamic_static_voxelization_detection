@@ -11,7 +11,7 @@ st.dr.save = '~/continental/kitti/2011_09_26/four_image_results_all_seq';
 % st.dr.mdr = 'E:\intern\raw_data\2011_09_26\2011_09_26_drive_0002_sync'
 
 if if_digits == 0
-    st.dr.mdr = strcat('D:/2011_09_26/2011_09_26_drive_000', num2str(sequence_no), '_sync');
+    st.dr.mdr = strcat('D:/2011_09_26/2011_09_26_drive_00', num2str(sequence_no), '_sync');
     st.dr.save = 'D:/2011_09_26/four_image_results_all_seq';
 end
 

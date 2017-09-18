@@ -5,16 +5,16 @@
 % Alireza Asvadi, 2015 July
 %% clear memory & command window
 clc; clear all; close all;
-sequence_no = 9;
-if_digits = 1;
+sequence_no = 52;
+if_digits = 0;
 %% setting 
 st           = Fstt(sequence_no, if_digits);
 %% main
-st.st.st = 58;
+st.st.st = 15 ;
 %   st.st.tn = 1;
-tic
-for frame    =  st.st.st : st.st.tn;             % frame number 1: 25
 
+for frame    =  st.st.st : st.st.tn;             % frame number 1: 25
+tic
 disp(['Processing frame ', num2str(frame), ' out of ',  num2str(st.st.tn)]);
 
 %run_demoVelodyne (base_dir, calib_dir)
@@ -34,7 +34,7 @@ h = figure('units','normalized','outerposition',[0 0 1 1], 'Visible', 'off')
 % figure('units','normalized','outerposition',[0 0 1 1])
 
 %% four image plot
-Fplot_fst(st, Bg, Fg, prm, frame)
+Fplot_fst(st, Bg, Fg, prm, frame);
 %Fplt(st, Bg, prm, frame, [1,0,0])
 %%
 
