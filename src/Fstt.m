@@ -8,7 +8,7 @@ sequence = sequence_no;
 st.dr.mdr  = strcat('~/continental/kitti/2011_09_26/2011_09_26_drive_000', num2str(sequence), '_sync');     % for digits machine                            % main directoy of dataset
 % st.dr.mdr = 'D:\2011_09_26\2011_09_26_drive_0009_sync';
 % st.dr.save = 'D:\result_dyn_sta';
-st.dr.save = '~/continental/kitti/2011_09_26/four_image_results_all_seq'
+st.dr.save = '~/continental/kitti/2011_09_26/four_image_results_all_seq';
 % st.dr.mdr = 'E:\intern\raw_data\2011_09_26\2011_09_26_drive_0002_sync'
 
 % st.dr.mdr  = 'F:/dataset_ext/dataset_tracking';
