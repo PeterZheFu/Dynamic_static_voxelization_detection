@@ -5,7 +5,7 @@
 % Alireza Asvadi, 2015 July
 %% clear memory & command window
 clc; clear all; close all;
-sequence_no = 9;
+sequence_no = 5;
 %% setting 
 st           = Fstt(sequence_no);
 %% main
@@ -32,8 +32,8 @@ h = figure('units','normalized','outerposition',[0 0 1 1], 'Visible', 'off')
 % figure('units','normalized','outerposition',[0 0 1 1])
 
 %% four image plot
-% Fplot_fst(st, Bg, Fg, prm, frame)
-Fplt(st, Bg, prm, frame, [1,0,0])
+Fplot_fst(st, Bg, Fg, prm, frame)
+%Fplt(st, Bg, prm, frame, [1,0,0])
 %%
 
 
