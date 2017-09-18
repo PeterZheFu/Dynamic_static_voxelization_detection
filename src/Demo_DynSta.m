@@ -6,7 +6,7 @@
 %% clear memory & command window
 clc; clear all; close all;
 sequence_no = 9;
-if_digits = 0;
+if_digits = 1;
 %% setting 
 st           = Fstt(sequence_no, if_digits);
 %% main
@@ -25,7 +25,7 @@ Bm           = Fmdl(In.mat, prm, st, frame);     % remove dynamic voxels and bui
 Fm           = Ffrg(Bm.mat, prm, st, frame);     % compute foreground voxels
 %% discriminative analysis
 [Bg, ~, ~]   = Fltr(Bm, Fm, st, 100);           % background model
-[Fg, ~, ~]   = Fltr(Fm, Bm, st, 5);             % foreground model
+[Fg, ~, ~]   = Fltr(Fm,  Bm, st, 5);             % foreground model
 %% plot
 
 h = figure('units','normalized','outerposition',[0 0 1 1], 'Visible', 'off')
