@@ -4,9 +4,7 @@
 % Output: Static / Dynamic environment modeling
 % Alireza Asvadi, 2015 July
 %% clear memory & command window
-clc
-clear all
-close all
+clc; clear all; close all;
 
 %% setting 
 st           = Fstt;
