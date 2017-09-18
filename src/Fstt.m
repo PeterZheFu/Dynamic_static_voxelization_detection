@@ -1,4 +1,4 @@
-function st = Fstt             % setting [directory, number of frames, map setting]
+function st = Fstt(sequence_no)             % setting [directory, number of frames, map setting]
 
 %% main directories [1: moving, 18: car stoped] 
 st.dr.dnm  = 1;    % (14) 1 - 12 - 17 - 18  % setting   % 1, 12, 17, [18-curve], [20-downtown]        % sub-directory number (dname - 1)
