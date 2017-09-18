@@ -205,7 +205,7 @@ pts.idx(pts.idx(:, 2) > st.vx.iy, 2) = st.vx.iy;
 %pts.idx(pts.idx(:, 3) > st.vx.iz, 3) = st.vx.iz;
 pts.idx(pts.idx(:, 3) > st.vx.iz, 3) = st.vx.iz;
 % vox_scatter3(pts.idx, 'pts.idx', frame)
-min(pts.idx)
+min(pts.idx);
 pts.idx = pts.idx(all(pts.idx>0, 2), :);
 
 mat.occ        = accumarray(pts.idx, 1, [st.vx.ix, st.vx.iy, st.vx.iz]);   % matrix with number of points in each cell

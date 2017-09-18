@@ -27,7 +27,7 @@ function run_demoTracklets(base_dir,calib_dir)
 
 % clear and close everything
 close all; dbstop error; clc;
-disp('======= KITTI DevKit Demo =======');
+% disp('======= KITTI DevKit Demo =======');
 
 % options (modify this to select your sequence)
 % the base_dir must contain:
@@ -43,10 +43,10 @@ disp('======= KITTI DevKit Demo =======');
 %   - 3 = right color
 if nargin<1
   % base_dir = '/mnt/karlsruhe_dataset/2011_09_26/2011_09_26_drive_0009_sync';
-  base_dir = '/media/data/kitti/2012_raw_data_extract/2011_09_26/2011_09_26_drive_0056';
+  base_dir = 'D:\2011_09_26\2011_09_26_drive_0001_sync';
 end
 if nargin<2
-  calib_dir = '/media/data/kitti/2012_raw_data_extract/2011_09_26';
+  calib_dir = 'D:\2011_09_26\2011_09_26_drive_0005_sync\calib';
 end
 cam = 2; % 0-based index
 
@@ -156,15 +156,15 @@ while 1
   end
 
   % force drawing and tiny user interface
-  waitforbuttonpress; 
-  key = get(gcf,'CurrentCharacter');
-  switch lower(key)                         
-    case 'q',  break;                                 % quit
-    case '-',  img_idx = max(img_idx-1,  0);          % previous frame
-    case 'x',  img_idx = min(img_idx+100,nimages-1);  % +100 frames
-    case 'y',  img_idx = max(img_idx-100,0);          % -100 frames
-    otherwise, img_idx = min(img_idx+1,  nimages-1);  % next frame
-  end
+%   waitforbuttonpress; 
+%   key = get(gcf,'CurrentCharacter');
+%   switch lower(key)                         
+%     case 'q',  break;                                 % quit
+%     case '-',  img_idx = max(img_idx-1,  0);          % previous frame
+%     case 'x',  img_idx = min(img_idx+100,nimages-1);  % +100 frames
+%     case 'y',  img_idx = max(img_idx-100,0);          % -100 frames
+%     otherwise, img_idx = min(img_idx+1,  nimages-1);  % next frame
+%   end
 
 end
 
