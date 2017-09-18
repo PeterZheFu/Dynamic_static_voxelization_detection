@@ -4,7 +4,7 @@ function st = Fstt             % setting [directory, number of frames, map setti
 st.dr.dnm  = 1;    % (14) 1 - 12 - 17 - 18  % setting   % 1, 12, 17, [18-curve], [20-downtown]        % sub-directory number (dname - 1)
 st.dr.cam  = 2;                                                                                     % left/right camera
   
-sequence = 9;
+sequence = sequence_no;
 st.dr.mdr  = strcat('~/continental/kitti/2011_09_26/2011_09_26_drive_000', num2str(sequence), '_sync');     % for digits machine                            % main directoy of dataset
 % st.dr.mdr = 'D:\2011_09_26\2011_09_26_drive_0009_sync';
 st.dr.save = 'D:\result_dyn_sta';
@@ -16,7 +16,7 @@ st.dr.pts  = fullfile(st.dr.mdr, sprintf('velodyne_points//data'));   % director
 st.dr.img  = fullfile(st.dr.mdr, sprintf('image_%02d//data//', st.dr.cam));  % directory of color images
 st.dr.lbl  = fullfile(st.dr.mdr, sprintf('label_%02d', st.dr.cam));                      % directory of tracklet labels
 st.dr.oxt  = fullfile(st.dr.mdr, 'oxts');                                                % directory of pose
-st.dr.clb  = fullfile(st.dr.mdr, '2011_09_26');                                               % directory of calibration
+st.dr.clb  = fullfile(st.dr.mdr, '2011_09_26');            % directory of calibration
 st.dr.rec  = fullfile(st.dr.mdr, 'result', filesep);                                                % directory of record
 st.dr.nsq  = numel(dir(fullfile(st.dr.mdr, sprintf('image_%02d', st.dr.cam)))) - 2;      % total number of tracking sequences
 %% start and end frames

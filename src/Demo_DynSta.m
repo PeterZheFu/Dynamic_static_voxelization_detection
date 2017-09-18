@@ -5,7 +5,7 @@
 % Alireza Asvadi, 2015 July
 %% clear memory & command window
 clc; clear all; close all;
-
+sequence_no = 9;
 %% setting 
 st           = Fstt;
 %% main
