@@ -21,7 +21,7 @@ hold on
 Fplt(st, Fg, prm, frame, [1,1,0])
 title('Both components')
 
-pause(0.005)
+%pause(0.005)
 
 end
 
