@@ -8,9 +8,8 @@ clc
 clear all
 close all
 
-sequence = 9;
 %% setting 
-st           = Fstt(9);
+st           = Fstt(sequence);
 %% main
 % st.st.st = 72;
 %   st.st.tn = 1;
