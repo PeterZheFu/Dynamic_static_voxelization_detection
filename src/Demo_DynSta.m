@@ -33,6 +33,7 @@ h = figure('units','normalized','outerposition',[0 0 1 1], 'Visible', 'off')
 
 %% four image plot
 % Fplot_fst(st, Bg, Fg, prm, frame)
+Fplt(st, Bg, prm, frame, [1,0,0])
 %%
 
 
