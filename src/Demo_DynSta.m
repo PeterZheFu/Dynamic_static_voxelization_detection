@@ -30,10 +30,11 @@ h = figure('units','normalized','outerposition',[0 0 1 1], 'Visible', 'off')
 % figure('units','normalized','outerposition',[0 0 1 1])
 %Fplot(st, Bg, Fg, prm, frame)  
 % figure('units','normalized','outerposition',[0 0 1 1])
-Fplot_fst(st, Bg, Fg, prm, frame)
+
+%% four image plot
+% Fplot_fst(st, Bg, Fg, prm, frame)
 %%
 
-% fpath = 'C:\Users\FU000\Documents\GitHub\Dynamic_static_voxelization_detection';
 
 fpath = st.dr.save
 % [status, msg, msgID] = mkdir(fullfile(fpath, 'sequence_0005_four_images_per_frame_images'));
