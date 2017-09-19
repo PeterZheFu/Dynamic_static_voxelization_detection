@@ -7,7 +7,9 @@ subplot(2, 2, 1);
 imshow(img)
 Fpli(st, Bg, frame, [1, 0, 0]) 
 Fpli(st, Fg, frame, [0, 1, 0])
-fname = strcat('Sequence_', num2str(sprintf('%04d', sequence_no)),'_frame_', num2str(sprintf('%03d', frame)));
+%fname = strcat('Sequence', '', num2str(sprintf('%04d', sequence_no)), '', 'frame', '', num2str(sprintf('%03d', frame)));
+fname = ['Sequence ', num2str(sprintf('%04d', sequence_no)) ' frame ' num2str(sprintf('%03d', frame))];
+
 title(fname)
 %% grid
 subplot(2, 2, 2);

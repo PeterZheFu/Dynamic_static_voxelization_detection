@@ -10,7 +10,7 @@ if_digits = 0;
 %% setting 
 st           = Fstt(sequence_no, if_digits);
 %% main
-% st.st.st = 6;
+st.st.st = 67;
 %   st.st.tn = 1;
 
 for frame    =  st.st.st : st.st.tn;             % frame number 1: 25
